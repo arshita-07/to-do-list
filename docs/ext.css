@@ -1,0 +1,90 @@
+*{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.jumbotron{
+    background-color: #1a75ff;
+    height: 50px;
+    padding-top: 10px;
+    position: sticky;
+    text-align: center;
+    color: white;
+}
+.tagname{
+	float: right;
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	right: 2%;
+	top: 20px;
+}
+table,th, td{
+	border: black 1px solid;
+	margin-left: auto;
+  	margin-right: auto;
+  	width: 70%;
+  	margin-top: 3%;
+  	padding: 2px;
+  	border-collapse: collapse;
+}
+.inputdiv{
+	margin-top: 5%;
+	padding-left: 1%;
+	text-align: center;
+}
+input{
+	height: 25px;
+	text-align: center;
+	border-radius: 2em;
+	border:solid black 1px;
+	outline:none;
+}
+select{
+	height: 30px;
+	border-radius: 2em;
+	outline: none;
+	border: black solid 1px;
+}
+button{
+	background-color: #1a75ff;
+	color: white;
+	border-radius:.5em;
+	border : white 1px solid;
+	width: 10%;
+	height: 30px;
+	outline: white;
+}
+button:hover{
+	background-color: white;
+	color: #1a75ff;
+	border-color: #1a75ff;
+}
+.descpanel{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	width: 50%;
+	display: none;
+	padding: 3%;
+	margin-left: 22%;
+	margin-top: 17%;
+	border-radius: 0.5em;
+	border: black solid 1px;
+}
+textarea{
+	border-radius: 0.5em;
+	padding: 3px;
+	border: black solid 1px;
+	outline: none;
+}
+textarea:focus{
+	border-color: #1a75ff;
+}
+input:focus{
+	border-color: #1a75ff;
+}
+select:focus{
+	border-color: #1a75ff;
+}

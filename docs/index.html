@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="ext.css">
+    <title>to do list</title>
+  </head>
+  <body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+      <div class="descpanel"><span style="position: absolute; right: 5px; top:5px;cursor: no-drop;" ng-click="removeDesc()">X</span><h1 id="desc_heading" style="text-align: center;"></h1>Due date:<span id="desc_date"></span><br>Priority: <span id="desc_priority"></span> <p id="desc_desc" style="text-align: center; font-size: 20px;"></p></div>
+      <div id="mainbody">
+    <div class="jumbotron">
+    <h1> To Do List</h1>
+    <div class="tagname"><i>Maveric Axe</i></div>
+    </div>
+    <div class="inputdiv">
+      <input type="number" name="SLno" placeholder="slno" style="width: 10%;" ng-model="newx.slno">
+      <input type="text" name="task" placeholder="task" style="width: 30%" ng-model="newx.task">
+      <input type="date" name="date" placeholder="date" ng-model="newx.date">
+      <select style="width: 8%;" ng-model="newx.priority">
+        <option>High</option>
+        <option>Moderate</option>
+        <option>Low</option>
+      </select>
+      <button type="submit" ng-click="addItem()">Add Task</button>
+    </div>
+    <div style="margin-left: 32%; margin-top: 1.5%;">
+      Desc:  <textarea rows="5" cols="56" placeholder="task desc" wrap="soft" ng-model="newx.desc"></textarea>
+    </div>
+    <div style="margin-top: 2%; margin-left:35%; width: 100%;">
+      <button ng-click="order='task'">order by task name</button>
+      <button ng-click="order='date'">order by due date</button>
+      <button ng-click="order='priority'">order by priority</button>
+    </div>
+    <div style="margin-left: 38%; margin-top: 2%;" >
+    Search:<input type="text" name="search" ng-model="search" style="width: 30%;">
+  </div>
+    <div>
+      <table >
+        <thead>
+          <th style="width: 10%;">SLno.</th>
+          <th style="width: 60%;">Task</th>
+          <th style="width: 15%;">Due Date</th>
+          <th style="width: 15%;">Priority</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="x in tasks |orderBy :order |filter: search">
+            <td style="width: 10%;" ng-click="openDesc(x)">{{x.slno}}</td>
+            <td style="width: 60%;" ng-click="openDesc(x)">{{x.task}}</td>
+            <td style="width: 15%;" ng-click="openDesc(x)">{{x.date}}</td>
+            <td style="width: 15%;" ng-click="openDesc(x)">{{x.priority}}<div ng-click="removeItem(x)" style="float: right;cursor: no-drop;">X</div> </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
